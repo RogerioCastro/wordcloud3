@@ -133,6 +133,16 @@ $ npm run build
 
 > O comando `npm run build` irá gerar os arquivos `wordcloud.min.js`, `wordcloud.min.js.map` e `wordcloud.min.js.LICENSE.txt` no diretório [`/dist`](/dist).
 
+## Créditos
+
+[wordcloud2.js](https://wordcloud2-js.timdream.org/) - Layout e impressão da nuvem em canvas 2D.
+
+[Tippy.js](https://atomiks.github.io/tippyjs/) - Solução completa para *tooltips* customizáveis.
+
+[D3.js](https://d3js.org/) - Biblioteca JavaScript com várias ferramentas para produzir visualizações de dados interativas e dinâmicas.
+
+[Lodash](https://lodash.com/) - Uma moderana biblioteca de utilitários JavaScript.
+
 ## License
 
 MIT &copy; Rogério Castro
