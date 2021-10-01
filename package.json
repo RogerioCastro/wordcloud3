@@ -1,0 +1,33 @@
+{
+  "name": "wordcloud3",
+  "version": "1.0.0",
+  "description": "Word cloud based on wordcloud2.js library",
+  "main": "dist/wordcloud.min.js",
+  "module": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open --config webpack.dev.js",
+    "start-no-open": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "keywords": [
+    "wordcloud"
+  ],
+  "author": "Rogério Castro",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^6.2.0",
+    "sass": "^1.38.2",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "d3": "^7.0.1",
+    "lodash": "^4.17.21",
+    "tippy.js": "^6.3.1"
+  }
+}

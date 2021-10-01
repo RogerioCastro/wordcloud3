@@ -1,0 +1,155 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script src='wordcloud.min.js'></script>
+</head>
+
+<body>
+  <style>
+    html,
+    body,
+    #main {
+      width: 100vw;
+      height: 100vh;
+      margin: auto;
+    }
+  </style>
+  <div id='main'></div>
+  <script>
+    const words = [
+      { name: 'iphone xr', value: 2240000 },
+      { name: 'iphone', value: 1830000 },
+      { name: 'iphone 7', value: 1830000 },
+      { name: 'iphone 8 plus', value: 1830000 },
+      { name: 'bebê reborn', value: 1500000 },
+      { name: 'geladeira', value: 1500000 },
+      { name: 'iphone 11', value: 1500000 },
+      { name: 'notebook', value: 1500000 },
+      { name: 'armario de cozinha', value: 1220000 },
+      { name: 'conversor', value: 1220000 },
+      { name: 'iphone 7 plus', value: 1220000 },
+      { name: 'iphone 8', value: 1220000 },
+      { name: 'iphone x', value: 1220000 },
+      { name: 'peppa pig', value: 1220000 },
+      { name: 'pichau', value: 1220000 },
+      { name: 'redmi note 8', value: 1220000 },
+      { name: 'xbox one', value: 1220000 },
+      { name: 'xiaomi redmi note 8', value: 1220000 },
+      { name: 'apple', value: 1000000 },
+      { name: 'cadeira gamer', value: 1000000 },
+      { name: 'celular samsung', value: 1000000 },
+      { name: 'guarda roupa', value: 1000000 },
+      { name: 'microondas', value: 1000000 },
+      { name: 'moto g8', value: 1000000 },
+      { name: 'motorola', value: 1000000 },
+      { name: 'ps4', value: 1000000 },
+      { name: 'bicicleta', value: 823000 },
+      { name: 'chromecast', value: 823000 },
+      { name: 'juliete', value: 823000 },
+      { name: 'maquina de lavar', value: 823000 },
+      { name: 'nintendo switch', value: 823000 },
+      { name: 'patrulha canina', value: 823000 },
+      { name: 'xiaomi mi 9', value: 823000 },
+      { name: 'a10', value: 673000 },
+      { name: 'a20', value: 673000 },
+      { name: 'ar condicionado', value: 673000 },
+      { name: 'celular xiaomi', value: 673000 },
+      { name: 'escrivaninha', value: 673000 },
+      { name: 'fogão 4 bocas', value: 673000 },
+      { name: 'guarda roupa casal', value: 673000 },
+      { name: 'iphone 11 pro', value: 673000 },
+      { name: 'moto g8 power', value: 673000 },
+      { name: 'penteadeira', value: 673000 },
+      { name: 'playstation 4', value: 673000 },
+      { name: 'ring light', value: 673000 },
+      { name: 's10', value: 673000 },
+      { name: 'samsung a10', value: 673000 },
+      { name: 'smartwatch', value: 673000 },
+      { name: 'tenis nike', value: 673000 },
+      { name: 'a30', value: 550000 },
+      { name: 'a30s', value: 550000 },
+      { name: 'a50', value: 550000 },
+      { name: 'a71', value: 550000 },
+      { name: 'all star', value: 550000 },
+      { name: 'apple watch', value: 550000 },
+      { name: 'aspirador de pó', value: 550000 },
+      { name: 'baby alive', value: 550000 },
+      { name: 'barbie', value: 550000 },
+      { name: 'bicicleta aro 29', value: 550000 },
+      { name: 'cadeira de escritorio', value: 550000 },
+      { name: 'celular motorola', value: 550000 },
+      { name: 'conversor de video', value: 550000 },
+      { name: 'dell', value: 550000 },
+      { name: 'dolce gusto', value: 550000 },
+      { name: 'electrolux', value: 550000 },
+      { name: 'forno eletrico', value: 550000 },
+      { name: 'galaxy s20', value: 550000 },
+      { name: 'guarda roupa solteiro', value: 550000 },
+      { name: 'iphone 11 pro max', value: 550000 },
+      { name: 'iphone 11pro max', value: 550000 },
+      { name: 'iphone se', value: 550000 },
+      { name: 'jbl', value: 550000 },
+      { name: 'jogos 360', value: 550000 },
+      { name: 'kindle', value: 550000 },
+      { name: 'louvores', value: 550000 },
+      { name: 'motorola one', value: 550000 },
+      { name: 'painel para tv', value: 550000 },
+      { name: 'samsung a10s', value: 550000 },
+      { name: 'samsung a71', value: 550000 },
+      { name: 'samsung m31', value: 550000 },
+      { name: 'samsung s10', value: 550000 },
+      { name: 'sofa retratil', value: 550000 },
+      { name: 'tv box', value: 550000 },
+      { name: 'aliança de namoro', value: 450000 },
+      { name: 'ar condicionado portatil', value: 450000 },
+      { name: 'bicicleta ergometrica', value: 450000 },
+      { name: 'caixa de som', value: 450000 },
+      { name: 'carrinho de bebe', value: 450000 },
+      { name: 'celulares baratos', value: 450000 },
+      { name: 'comparar celular', value: 450000 },
+      { name: 'computador', value: 450000 },
+      { name: 'espelhos para banheiro', value: 450000 },
+      { name: 'eudora', value: 450000 },
+      { name: 'fogão 5 bocas', value: 450000 },
+      { name: 'fone bluetooth', value: 450000 },
+      { name: 'fone de ouvido bluetooth', value: 450000 },
+      { name: 'geladeira brastemp', value: 450000 },
+      { name: 'geladeira frost free', value: 450000 },
+      { name: 'iphone xs', value: 450000 },
+      { name: 'maquina de costura', value: 450000 }
+    ];
+    const wordcloud = Wordcloud('main', {
+      // data: words.slice(0, 100),
+      data: words,
+      shape: 'square',
+      drawOutOfBound: true,
+      sort: false,
+      responsive: true,
+      interactive: true, // também influencia a exibição ou não de tooltips
+      maskImage: 'brasil.png',
+      tooltip: (word) => {
+        let content = `<strong>${word.name}</strong><hr>`
+        let value = new Intl.NumberFormat('pt-BR').format(word.value);
+        content += `Buscas: ${value}`
+        return content
+      },
+      onClick: (word) => {
+        // console.info('onClick:', word)
+      },
+      onMouseover: (word) => {
+        // console.info('onMouseover:', word)
+      },
+      onMouseout: (word) => {
+        // console.info('onMouseout:', word)
+      },
+      onWordcloudStop: ({ plottedWords, data }) => {
+        // console.info('onWordcloudStop:', plottedWords, data)
+        // console.info('Dados originais:', words)
+      }
+    });
+  </script>
+</body>
+
+</html>
