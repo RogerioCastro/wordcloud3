@@ -2,6 +2,8 @@
 
 Biblioteca para geração de nuvem de palavras utilizando **canvas 2D**, baseada na biblioteca [wordcloud2.js](https://timdream.org/wordcloud2.js/).
 
+<p align="center"><img src="https://raw.githubusercontent.com/RogerioCastro/wordcloud3/main/dist/example.png"></p>
+
 ## Características
 
 Além das funcionalidades disponíveis na biblioteca **wordcloud2.js**, algumas melhorias foram acrescentadas:
